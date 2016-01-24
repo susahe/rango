@@ -1,0 +1,12 @@
+<! DOCTYPE html> 
+<html>
+  <head> 
+    <title> Rango </title>
+  </head>
+  <body>
+    <a href = "/rango/">Home </a> <a href = "/rango/about/">About </a> <a href = "/rango/contact/"> contact </a> 
+    <h1> Rango Says .... </h1>
+    Hello world  <strong > {{ boldmessage }}</strong> <br/> 
+    <a href = " /rango/about/"> About </a> <br/>
+  </body>
+</html>
