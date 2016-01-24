@@ -10,18 +10,11 @@
 <img src="{% static 'images/rango.jpg' %}" alt = "picture" width=75 height=75 />
     <A Href = "/rango/">Home  </A> <A Href = "/rango/about/">About  </a> <a href = "/rango/contact/"> contact  </a> 
 
-    <h1> Rango Says .... </h1> 
-    
-    {% if categories %}
-    <ul> 
-      {% for category in categories %}
-      <li> <a href="/rango/category/{{category.slug}}">{{category.name}}</a> </li>
-    {% endfor %}
-    </ul>
-    {% else %}
-    <strong > There are no categoires present . </strong>
-    {% endif %}
-    
+    <h1> Rango Says ....I'm the about page </h1> 
+    Hello   <strong > {{ boldmessage }}</strong> <br/> 
+    <img src="{% static 'images/1501.jpg' %}" alt = "picture" width=80 height=80 />
+<h1> This is </h1>
+
   </body>
 </html>
 

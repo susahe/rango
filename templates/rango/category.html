@@ -1,0 +1,32 @@
+<! DOCTYPE html> 
+{% load static %}
+<html>
+  <head> 
+    <title>Category </title>
+    <!-- <link rel = "stylesheet" href= "{% static "css/base.Css" %}" /> <!-- Css -->
+<!--    <script src = "{% static "js/jquery.js" %} > </script> -->
+  </Head>
+  <Body>
+<img src="{% static 'images/rango.jpg' %}" alt = "picture" width=75 height=75 />
+    <A Href = "/rango/">Home  </A> <A Href = "/rango/about/">About  </a> <a href = "/rango/contact/"> contact  </a> 
+
+    <h1> Rango Says Category Page  .... </h1> 
+    
+    {% if category  %}
+    <h1> {{ category_name }} </h1>
+      {% if pages %}
+    <ul> 
+	  {% for page in pages %}
+      <li> <a href = '{{page.url}} ' > {{ page.title}} </a> </li>
+          {% endfor %}
+    </ul>
+        {% else %}
+    <strong > There are no page curently in category  present . </strong>
+        {% endif %}
+      {% else %}
+    
+      The Speicfie cateogry {{ category_name}}  does not exist 
+     {% endif %}
+    
+  </body>
+</html>
