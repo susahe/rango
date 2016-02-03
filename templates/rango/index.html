@@ -1,17 +1,28 @@
-<! DOCTYPE html> 
+{% extends 'base.html' %}
+
 {% load static %}
-<html>
-  <head> 
-    <title> Rango </title>
-    <!-- <link rel = "stylesheet" href= "{% static "css/base.Css" %}" /> <!-- Css -->
-<!--    <script src = "{% static "js/jquery.js" %} > </script> -->
-  </Head>
-  <Body>
+
+{% block title %}{{categry_name }}{% endblock%}
+
+{% block body_block% %}
+
+
 <img src="{% static 'images/rango.jpg' %}" alt = "picture" width=75 height=75 />
     <A Href = "/rango/">Home  </A> <A Href = "/rango/about/">About  </a> <a href = "/rango/contact/"> contact  </a> 
 
-    <h1> Rango Says .... </h1> 
-    
+{% if user.is_authenticated %}
+    <a href= "/rango/restricted/"> Restircted Page </a><br/>
+    <a href = "/rango/logout/"> Logout </a> <br/>
+    <a href = "/rango/add_category/"> Add Category </a>
+    <h1> Rango Says ....Hello {{user.username}} </h1> 
+
+{% else %}
+    <a href = "/rango/register/"> Register here</a><br/>
+    <a href = "/rango/login/"> Login </a><br/>
+
+    <h1> Rango says ... Hello world ! not login </h1>
+{% endif %}
+
     {% if categories %}
     <ul> 
       {% for category in categories %}
@@ -22,6 +33,6 @@
     <strong > There are no categoires present . </strong>
     {% endif %}
     
-  </body>
-</html>
+
+{% endblock %}
 
